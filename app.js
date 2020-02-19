@@ -15,11 +15,11 @@ app.get("/", function(req,res){
 
 app.post("/",function(req,res){
 
-    var firstName = req.body.firstName;
-    var lastName = req.body.lastName;
-    var email = req.body.emailAddress;
+    let firstName = req.body.firstName;
+    let lastName = req.body.lastName;
+    let email = req.body.emailAddress;
 
-    var data = {
+    const data = {
         members: [
             {
                 email_address:email, 
@@ -32,10 +32,9 @@ app.post("/",function(req,res){
         ]
     };
 
-   var jsonData = JSON.stringify(data);
-    console.log(firstName, lastName, email);
+   const jsonData = JSON.stringify(data);
 
-    var options = {
+    const options = {
         url: "https://us16.api.mailchimp.com/3.0/lists/040c7424e5",
         method:"POST",
         headers: {
